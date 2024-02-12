@@ -1,0 +1,28 @@
+<div class="log-sec">
+    {% extends "base.html" %}
+    {% load crispy_forms_tags %}
+    {% block content %}
+    <div class="container">
+        <div class="col-md-6 m-auto">
+            <div class="pos-box">
+            <div class="log-wrap login-wrap">
+                <h3>Log In</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <!-- <legend class="border-bottom mb-4">Log In</legend> -->
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-warning new_submit_now w-100 mb-2" type="submit">Login</button>
+                        <small class="text-muted">
+                            <a href="#">Forgot Password ?</a>
+                        </small>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</div>

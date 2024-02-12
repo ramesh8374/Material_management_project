@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content-section">
+  <div class="container">
+    <div class="top-title">
+      <h1>Vendor Details</h1>
+    </div>
+    <div class="dash-wrap">
+    <div class="row">
+      <div class="col-12 col-xl-4">
+        <div className="card">
+          <div className="d-icon">
+            <img src={%static "assets/img/vendor.png"%} alt="icon">
+          </div>
+          <div className="card-text">
+            <h5>Vendor Mangement</h5>
+            <p>Add/edit/delete etc.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div className="card">
+          <div className="d-icon">
+            <img src={%static "assets/img/purchase.png"%} alt="icon">
+          </div>
+          <div className="card-text">
+            <h5>Purchase Management</h5>
+            <p>Add/edit/delete etc.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div className="card">
+          <div className="d-icon">
+            <img src={%static "assets/img/quotation.png"%} alt="icon">
+          </div>
+          <div className="card-text">
+            <h5>Quotation Management</h5>
+            <p>Add/edit/delete etc.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div className="card">
+          <div className="d-icon">
+            <img src={%static "assets/img/user.png"%} alt="icon">
+          </div>
+          <div className="card-text">
+            <h5>User Management</h5>
+            <p>Add/edit/delete etc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

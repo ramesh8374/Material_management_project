@@ -1,0 +1,15 @@
+<div class="log-sec">
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 m-auto">
+            <div class="pos-box">
+            <div class="log-wrap">
+                <h2>You have been logged out</h2>
+                <a href="{% url 'login' %}" class="btn btn-warning new_submit_now w-100">Log In Again</a>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+</div>

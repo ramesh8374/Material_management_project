@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {%load static%}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Amik Metals</title>
+
+  <!-- Favicons -->
+  <link href={%static "assets/img/amik_Logo_PNG.png" %} rel="icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href={%static "assets/css/style.css" %} rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="user-nav">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- navbar -->
+    <div id="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <!-- <a class="navbar-brand" href="#">Amik Metals</a> -->
+          <div class="logo logo_position_set">
+            <a><img class="logo_position_set2" src={%static "assets/img/amik_Logo_PNG.png" %} alt="logo"></a>
+            <h1 class="logo_text">Amik Metals</h1>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- left side -->
+            {% if request.user.is_authenticated %}
+            <ul class="navbar-nav side-menu">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'add_factory' %}">Factory Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'factories' %}">Factory List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'add_vendor'%}">Vendors Form</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'vendors'%}">Vendors List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'quotations'%}">Quotation</a>
+              </li>
+              {% if request.user.profile.role == "super_admin" %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'register'%}">Add User</a>
+              </li>
+              {% endif %}
+            </ul>
+            {% endif %}
+
+            <!-- righ side -->
+            <div class="head-drop dropdown navbar-nav ms-auto">
+              <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img class="" src={%static "assets/img/userNavbar.png" %} alt="user">
+                User
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% endif %}
+            </div>
+
+            <!-- <ul class="navbar-nav ms-auto">
+              {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Logout</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- end navbar -->
+    {% block content %}
+    {% endblock %}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

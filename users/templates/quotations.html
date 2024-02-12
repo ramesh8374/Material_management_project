@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{%load static%}
+{% block content %}      
+<div class="content-section">
+  <div class="container">
+    <div class="top-title">
+      <h1>All Quotations </h1>
+    </div>
+
+<table class="table table-bordered">
+    <thead class="text-center">
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Raw Meterial</th>
+        <th scope="col">Vendor Name</th>
+        <th scope="col">Purchase rate/kg</th>
+        <th scope="col">Delivery</th>
+        <th scope="col">Payment Terms</th>
+        <th scope="col">Freight</th>
+        <th scope="col">GST</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Action</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in quotations %}
+      <tr>
+        <th scope="row">{{ forloop.counter}}</th>
+        <th>{{ row.name_of_raw_material }}</th>
+        <th>{{ row.name_of_vendor }}</th>
+        <th>{{ row.purchase_rate_per_kg }}</th>
+        <th>{{ row.delivery }}</th>
+        <th>{{ row.payment_terms }}</th>
+        <th>{{ row.freight }}</th>
+        <th>{{ row.gst }}</th>
+        <th>{{ row.phone_number }}</th>
+       <th>
+        <a href="{% url 'quotation_delete' pk=row.id %}">Delete</a>
+       </th>
+       <th>
+        <a href="{% url 'quotation_details' pk=row.id %}">Update</a>
+      </th>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <a class="btn btn-primary" href="{% url 'comparision' %}">Comparision Table</a>
+  {% endblock %}

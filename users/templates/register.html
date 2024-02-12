@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content-section">
+	<div class="container">
+		<div class="top-title">
+			<h1>Add User</h1>
+		</div>
+		{% if messages %}
+		{% for message in messages %}
+		<div class="alert alert-{{ message.tags }}">
+			{{ message }}
+		</div>
+		{% endfor %}
+		{% endif %}
+		<div class="col-xl-8 m-auto">
+			<div class="card-wrap">
+				<div class="card-box">
+					<form method="POST" action="" novalidate>
+						{% csrf_token %}
+						{{ u_form|crispy }}
+						{{ p_form|crispy }}
+						<input type="submit" class="btn btn-warning new_submit_now w-100" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

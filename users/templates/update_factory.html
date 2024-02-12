@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+<div class="content-section">
+    <div class="container">
+        <div class="top-title">
+            <h1>Update Factory Details</h1>
+        </div>
+        <div class="col-xl-8 m-auto">
+            <div class="card-wrap">
+                <div class="card-box">
+                    <form method="POST" action="" novalidate>
+                        {% csrf_token %}
+                        {{ factory_form|crispy }}
+                        <input type="submit" class="btn btn-warning new_submit_now w-100" value="Update Factory" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

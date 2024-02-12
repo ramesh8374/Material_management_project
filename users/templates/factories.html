@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{%load static%}
+{% block content %}
+
+<div class="content-section">
+  <div class="container">
+    <div class="top-title">
+      <h1>Factory List </h1>
+    </div>
+    <a class="btn btn-warning new_submit_now mb-4" href="{% url 'add_factory'%}">Add Raw Materials</a>
+
+<h1>All Factories </h1> <hr/>
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Raw Meterial</th>
+        <th scope="col">UoM</th>
+        <th scope="col">Previous Supplier</th>
+        <th scope="col">Estimated Delivery Time</th>
+        <th scope="col">Vendor Location</th>
+        <th scope="col">Minimum Stock Required For 15days</th>
+        <th scope="col">Current Stock</th>
+        <th scope="col">Total Quantity Required</th>
+        <th scope="col">Last Purchase Price</th>
+        <th scope="col">Last Purchase Value</th>
+        <th scope="col">Action</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in factories %}
+      <tr>
+        <th scope="row">{{ forloop.counter}}</th>
+        <th>
+          {{ row.name_of_raw_material }}
+        </th>
+        <th>{{ row.UoM }}</th>
+        <th>{{ row.previous_supplier }}</th>
+        <th>{{ row.estimated_delivery_time }}</th>
+        <th>{{ row.vendor_location }}</th>
+        <th>{{ row.minimum_stock_required_for_15days }}</th>
+        <th>{{ row.current_stock }}</th>
+        <th>{{ row.total_quantity_required }}</th>
+        <th>{{ row.last_purchase_price }}</th>
+        <th>{{ row.last_purchase_value }}</th>
+
+       <th>
+        <a href="{% url 'factory_delete' pk=row.id %}">Delete</a>
+       </th>
+       <th>
+        <a href="{% url 'factory_details' pk=row.id %}">Update</a>
+      </th>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <a class="btn btn-primary" href="{% url 'add_factory'%}">Add Factory</a>
+<center>
+    <form method="POST" action="{% url 'send_indent' %}">
+      {% csrf_token %}
+      <!-- factories -->
+    <select name ="meterials" multiple>
+      {% for factory in factories %}
+        <option>{{ factory.name_of_raw_material }}</option>
+      {% endfor %}
+    </select>
+    <!-- end factories -->
+    
+
+    <!-- vendors -->
+    <select name ="vendors" multiple>
+      {% for vendor in vendors %}
+        <option>{{ vendor.name }}</option>
+      {% endfor %}
+    </select>
+    <!-- end vendors -->
+    <input type="submit" class="btn btn-info" value="Send Email">
+  </form>
+</center>
+{% endblock %}

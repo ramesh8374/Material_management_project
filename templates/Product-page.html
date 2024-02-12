@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {%load static%}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Amik Metals | Amik Metals Pvt. Ltd.</title>
+    <meta name="description" content="We are A Ferrous Foundry located in Uluberia, 44 kms away from Kolkata. Having State-of-the-art equipment, specialised manpower and a dedicated team of professionals." >
+    <meta name="keywords" content="Amik Metals, Amik Metals Pvt. Ltd." >
+
+  <!-- Favicons -->
+  <link href={%static "assets/img/amik_Logo_PNG.png"%} rel="icon">
+  <link href={%static "assets/img/apple-touch-icon.png"%} rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href={%static "assets/vendor/aos/aos.css"%} rel="stylesheet">
+  <link href={%static "assets/vendor/bootstrap/css/bootstrap.min.css"%} rel="stylesheet">
+  <link href={%static "assets/vendor/bootstrap-icons/bootstrap-icons.css"%} rel="stylesheet">
+  <link href={%static "assets/vendor/boxicons/css/boxicons.min.css"%} rel="stylesheet">
+  <link href={%static "assets/vendor/glightbox/css/glightbox.min.css"%} rel="stylesheet">
+  <link href={%static "assets/vendor/remixicon/remixicon.css"%} rel="stylesheet">
+  <link href={%static "assets/vendor/swiper/swiper-bundle.min.css"%} rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href={%static "assets/css/style.css"%} rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo logo_position_set">
+        <a href="{% url 'index' %}"><img class="logo_position_set2" src={%static "assets/img/amik_Logo_PNG.png"%} alt=""></a>
+        <h1 class="logo_text">Amik Metals</h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'about' %}">About Us</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'product' %}">Products</a></li>
+          <li><a class="nav-link scrollto " href="{% url 'electro' %}"> ZINC ELECTROPLATING</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'infra' %}">Infrastructure</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'career' %}">Career</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center about_section_rm_top">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 pt-0 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+          data-aos="fade-up" data-aos-delay="0">
+          <img src={%static "assets/img/Products-v1.png"%} class="img-fluid animated" alt="">
+          <div class="top-left">
+            <h2 data-aos="fade-up" data-aos-delay="400" class="top_text_design">Product
+            </h2>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Us Section ======= -->
+    <section id="about">
+      <div class="container">
+        <!-- <div class="text_" data-aos="fade-up" data-aos-delay="150">
+          <p class="lorem_ipsom_de_re">Product Size : 3/8” onwards <br> Process : Green sand & No Bake <br> Weight : 100
+            gms to 500 kgs </p>
+        </div> -->
+      </div>
+    </section>
+    <!-- End About Us Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials  testimonials_trmove ">
+      <div class="container ">
+        <div class="row mb-5">
+          {%for i in products%}
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="{{i.product_image.url}}" class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>{{i.product_name}}</h3>
+                    <p>
+                      {{i.description}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+          <!-- End testimonial item -->
+          {% comment %} <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={%static "assets/img/testimonials/testimonials-2.jpg"%} class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>Machinery Parts</h3>
+                    <p>
+                      Net Weight: 100kg.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <!-- End testimonial item -->
+          {% comment %} <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={%static "assets/img/testimonials/testimonials-3.jpg"%} class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>Railway Insert</h3>
+                    <p>
+                      Net Weight: 1.5kg, Size: 8 inches.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <!-- End testimonial item -->
+          {% comment %} <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={%static "assets/img/testimonials/Products-2.jpg"%} class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>Pipe Fittings</h3>
+                    <p>
+                      Size: 1/8 - 6 inch 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <!-- End testimonial item -->
+
+        {% comment %} </div>
+        <div class="row mb-5"> {% endcomment %}
+
+          {% comment %} <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={%static "assets/img/testimonials/Products-1.jpg"%} class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>Automobile Parts(Tractors)</h3>
+                    <p>
+                      Net Weight: 15kg.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <!-- End testimonial item -->
+          {% comment %} <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={%static "assets/img/testimonials/Products-4.jpg"%} class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>Conduit Body</h3>
+                    <p>
+                      Net Weight: 100gm - 1kg.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <!-- End testimonial item -->
+          {% comment %} <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={%static "assets/img/testimonials/Products-5.jpg"%} class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>Liquid Tight Fittings</h3>
+                    <p>
+                      Net Weight: 100gm - 1kg.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <!-- End testimonial item -->
+          {% comment %} <div class="col-lg-3 col-md-6 col-sm-12"> {% endcomment %}
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src={%static"assets/img/testimonials/testimonials-2.jpg" class="image_testi" alt="">
+                  <div class="content_p">
+                    <h3>Lorem Ipsum</h3>
+                    <p>
+                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum .
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <!-- End testimonial item -->
+
+        </div>
+
+        
+      </div>
+
+    </section>
+
+
+  </main><!-- End #main -->
+
+  <footer id="footer" class="footer-area py-5">
+    <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="footer-logo mb-3">
+              <img src={%static "assets/img/About-Us-logo.png"%} class="amik_Images" alt="">
+              <h1 class="logo_text_footer">Amik Metals</h1>
+            </div>
+            <h6 class="text-light">
+
+            </h6>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+            <h5 class="footer-titel">Corporate Office</h5>
+            <p>
+              2 Hare Street
+              Nicco House, 6th Floor
+              Kolkata 700001, INDIA.
+            </p>
+            <h5 class="footer-titel">Factory Address</h5>
+            <p>
+              Kaijuri, P.O: Kaijuri, P.S: Uluberia, Uluberia - 1
+              Howrah - 711316, West Bengal, INDIA
+            </p>
+
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
+            <h5 class="footer-titel">Contact</h5>
+            <p>
+              (+91) 98 31955404 <br>
+              (+91) 90077 74688<br>
+              ankit@amikmetals.com<br>
+              anish@amikmetals.com<br>
+              we reply within 24 hours
+            </p>
+            <div>
+              <script type="text/javascript"> //<![CDATA[
+                var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+                document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+                //]]></script>
+              <script language="JavaScript" type="text/javascript">
+                TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- </footer> -->
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src={%static "assets/vendor/purecounter/purecounter.js"%}></script>
+  <script src={%static "assets/vendor/aos/aos.js"%}></script>
+  <script src={%static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js"%}></script>
+  <script src={%static "assets/vendor/glightbox/js/glightbox.min.js"%}></script>
+  <script src={%static "assets/vendor/isotope-layout/isotope.pkgd.min.js"%}></script>
+  <script src={%static "assets/vendor/swiper/swiper-bundle.min.js"%}></script>
+  <script src={%static "assets/vendor/php-email-form/validate.js"%}></script>
+
+  <!-- Template Main JS File -->
+  <script src={%static "assets/js/main.js"%}></script>
+
+</body>
+
+</html>

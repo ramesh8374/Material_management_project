@@ -1,0 +1,25 @@
+<div class="content-section">
+<div class="container">
+<table class="table" style="border: 1px">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Name of the Raw Material</th>
+      <th scope="col">Total Quantity Required</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for meterial in meterials %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ meterial.name_of_raw_material }}</td>
+      <td>{{ meterial.total_quantity_required }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+<!-- Quotation Page-->
+<a href="http://127.0.0.1:8000/users/add_quotation/">Quotation</a>

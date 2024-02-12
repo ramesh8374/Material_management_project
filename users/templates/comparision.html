@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load quotation_filter %}
+{% block content %}      
+
+<h1>Comparision Table </h1> <hr/>
+
+{% for row in materials %}
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Raw Material</th>
+        <th scope="col">Total Quantity Required</th>
+        <th scope="col">Last Purchase Price</th>
+        <th scope="col">Last Purchase Value</th>
+        <th scope="col" colspan="5">Quotations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ forloop.counter}}</th>
+        <th>
+          {{ row.name_of_raw_material }}
+        </th>
+        <th>{{ row.total_quantity_required }}</th>
+        <th>{{ row.last_purchase_price }}</th>
+        <th>{{ row.last_purchase_value }}</th>
+        {% for data in quotations_|quotations:row.name_of_raw_material %}
+          <th>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td>{{ data.name_of_vendor}} - {{ data.purchase_rate_per_kg}}</td>
+                </tr>
+                <tr>
+                  <td>Delivery-{{data.delivery}}</td>
+                </tr>
+                <tr>
+                  <td>Payment Terms-{{data.payment_terms}}</td>
+                </tr>
+                <tr>
+                  <td>Freight-{{data.freight}}</td>
+                </tr>
+                <tr>
+                  <td>GST-{{data.gst}}</td>
+                </tr>
+              </tbody>
+            </table>          
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+{% endfor %}
+<center>
+  <form method="POST" action="{% url 'send_po' %}">
+    {% csrf_token %}
+    <!-- factories -->
+  <select name ="meterials" multiple>
+    {% for i in materials %}
+      <option>{{ i.name_of_raw_material }}</option>
+    {% endfor %}
+  </select>
+  <!-- end factories -->
+
+  <!-- vendors -->
+  <select name ="vendors" multiple>
+    {% for vendor in vendors %}
+      <option>{{ vendor.name }}</option>
+    {% endfor %}
+  </select>
+  <!-- end vendors -->
+  <input type="submit" class="btn btn-info" value="Send PO">
+</form>
+</center>
+
+{% endblock %}

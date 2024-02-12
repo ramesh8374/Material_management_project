@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Amik Metals | Amik Metals Pvt. Ltd.</title>
+    <meta name="description" content="We are A Ferrous Foundry located in Uluberia, 44 kms away from Kolkata. Having State-of-the-art equipment, specialised manpower and a dedicated team of professionals." >
+    <meta name="keywords" content="Amik Metals, Amik Metals Pvt. Ltd." >
+
+    <!-- Favicons -->
+    <link href={%static "assets/img/amik_Logo_PNG.png"%} rel="icon">
+    <link href={%static "assets/img/apple-touch-icon.png"%} rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={%static "assets/vendor/aos/aos.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/bootstrap/css/bootstrap.min.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/bootstrap-icons/bootstrap-icons.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/boxicons/css/boxicons.min.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/glightbox/css/glightbox.min.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/remixicon/remixicon.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/swiper/swiper-bundle.min.css"%} rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href={%static "assets/css/style.css"%} rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Vesperr - v4.7.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo logo_position_set">
+                <a href="{% url 'index' %}"><img class="logo_position_set2" src={%static "assets/img/amik_Logo_PNG.png"%} alt=""></a>
+                <h1 class="logo_text">Amik Metals</h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index"><img src={%static "assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto " href="{% url 'index' %}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'about' %}">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'product' %}">Products</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'electro' %}">ZINC ELECTROPLATING</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'infra' %}">Infrastructure</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'career' %}">Career</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact Us</a></li>
+                    <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center about_section_rm_top">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 pt-0 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src={%static "assets/img/About-Banner.jpg"%} class="img-fluid animated" alt="">
+                    <div class="top-left">
+                        <h2 data-aos="fade-up" data-aos-delay="400" class="top_text_design">About Us</h2>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+    <main id="main">
+        <!-- new section -->
+        <section class="rmoving_bootm_padding">
+            <div class="container">
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-info">
+                            <h4 class="about_us_headings">We are</h4>
+                            <p class="ab_heading_undert">A Ferrous Foundry located in Uluberia, 44 kms away from
+                                Kolkata. Having State-of-the-art equipment, specialised manpower and a dedicated team of
+                                professionals.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-info">
+                            <h4 class="about_us_headings">We Specialize</h4>
+                            <p class="ab_heading_undert">In high quality and finished Small Castings of Ductile and
+                                Malleable Iron.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-info">
+                            <h4 class="about_us_headings">WE PROVIDE</h4>
+                            <p class="ab_heading_undert">Quality products, On-time delivery, Optimum prices and
+                                Dedicated customer service.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="400">
+                <img src={%static "assets/img/About-factory.jpg"%} class="about_us_image_factory" alt="">
+            </div>
+        </section>
+        <!-- ebd new section -->
+        <!-- ======= About Us Section ======= -->
+        <section class="removing_pagging_top">
+            <div class="container-fluid con_remov_p">
+                {%for i in aboutus%}
+                {% if loop.index is not even%}
+                <div class="row content">
+                    <div class="col-lg-6 con_remov_p" data-aos="fade-up" data-aos-delay="150">
+                        <img src="{{i.image.url}}" class="about_us_image_fact" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-0 pt-lg-0 con_remov_p" data-aos="fade-up" data-aos-delay="300">
+                        <div class="background_col_sec2">
+                            <h1 class="mechining_design">{{i.title}}</h1>
+                            <p class="lorem_ipsom_de"> {{i.description}}
+                            </p>
+                        </div> 
+                    </div>
+                </div>
+                {% else %}
+                <div class="row content">
+                    <div class="col-lg-6 pt-0 pt-lg-0 con_remov_p" data-aos="fade-up" data-aos-delay="300">
+                        <div class="background_col_sec2">
+                            <h1 class="mechining_design">{{i.title}}</h1>
+                            <p class="lorem_ipsom_de"> {{i.description}}
+                            </p>
+                        </div> 
+                    </div>
+                    <div class="col-lg-6 con_remov_p" data-aos="fade-up" data-aos-delay="150">
+                        <img src="{{i.image.url}}" class="about_us_image_fact" alt="">
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        <!-- End About Us Section -->
+        <!-- ======= Testimonials Section ======= -->
+
+        <!-- End Testimonials Section -->
+        <!-- ======= Portfolio Section ======= -->
+<!-- 
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2 class="our_product_ds">Why Amik Metals</h2>
+                </div>
+
+                <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active pillbg" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true"><img src={%static "assets/img/Why-Amik-icon-1.png" class="specilaization"
+                                alt=""> Specialization</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link pillbg2" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false"><img src={%static "assets/img/About_icon.png" class="specilaization2" alt="">
+                            State of theart machinery</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link pillbg3" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false"><img src={%static "assets/img/About_icon2.png" class="specilaization3" alt="">
+                            Quality assurance</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab" data-aos="fade-up" data-aos-delay="200">
+                        <div class="row pae_distribution">
+                            <div class="col-lg-9 " data-aos="fade-up" data-aos-delay="150">
+                                <p class="lorem_ipsom_de_re">Most foundries shy away from small castings, saying “it’s
+                                    tough.” We embraced it.
+                                    <br><br>We specialize in small and precision castings of Ductile and Malleable Iron
+                                    offering a winning combination of trained manpower, customized machinery, and
+                                    suitable practices. We provide fully assembled, ready-to-use products.<br> <br>
+                                    We have carefully chosen the DISA Vertical moulding machine (box size 650x535mm),
+                                    and No-Bake hand moulding facility, constructed our pouring system, installed
+                                    specialized fettling machines, and designed our tools to achieve high volume,
+                                    costeffective, and consistent quality in producing smaller castings.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 pt-0 pt-lg-0 " data-aos="fade-up" data-aos-delay="300">
+                                <img src={%static "assets/img/Why-Amik-1.jpg" class="about_us_image_fact" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <p>
+                            This is some placeholder content the Profile tab's associated content. Clicking another tab
+                            will toggle the visibility of this one for the next. The tab JavaScript swaps classes to
+                            control the content visibility and styling. You can use it with tabs, pills, and any other
+                            .nav-powered navigation.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <p>This is some placeholder content the Contact tab's associated content. Clicking another tab
+                            will toggle the visibility of this one for the next. The tab JavaScript swaps classes to
+                            control the content visibility and styling. You can use it with tabs, pills, and any other
+                            .nav-powered navigation.</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section> -->
+
+
+        <section class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="150">
+                        <img src={%static "assets/img/Greenfield.jpg"%} class="about_us_image_fact" alt="">
+                    </div>
+                    <div class="col-lg-7 pt-0 pt-lg-0 pppl_de" data-aos="fade-up" data-aos-delay="300">
+
+                        <h1 class="mechining_greenfild mb-2">GREENFIELD PROJECT</h1>
+                        <p class="lorem_ipsom_de_new">Commenced production in April 2021 with a capacity of 4,200 MTPA
+                            in Phase-I<br><br>
+
+                            Started exporting to clients in South Korea, Europe and North America.<br><br>
+                            Integrated latest technology and modern practices with experiential knowledge.<br><br>
+                            A team with over 100 years of combined experience in the industry led by third generation
+                            <br> entrepreneurs.<br><br>
+                            An eco-friendly company that has installed the bestin-class pollution control equipment <br>
+                            and uses environmentally sustainable practices.
+
+                        </p>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- End Portfolio Section-->
+
+
+
+
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+
+    <footer id="footer" class="footer-area py-5">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="footer-logo mb-3">
+                            <img src={%static "assets/img/About-Us-logo.png"%} class="amik_Images" alt="">
+                            <h1 class="logo_text_footer">Amik Metals</h1>
+                        </div>
+                        <h6 class="text-light">
+
+                        </h6>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+                        <h5 class="footer-titel">Corporate Office</h5>
+                        <p>
+                            2 Hare Street
+                            Nicco House, 6th Floor
+                            Kolkata 700001, INDIA.
+                        </p>
+                        <h5 class="footer-titel">Factory Address</h5>
+                        <p>
+                            Kaijuri, P.O: Kaijuri, P.S: Uluberia, Uluberia - 1
+                            Howrah - 711316, West Bengal, INDIA
+                        </p>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
+                        <h5 class="footer-titel">Contact</h5>
+                        <p>
+                            (+91) 98 31955404 <br>
+                            (+91) 90077 74688<br>
+                            ankit@amikmetals.com<br>
+                            anish@amikmetals.com<br>
+                            we reply within 24 hours
+                        </p>
+                        <div>
+                            <script type="text/javascript"> //<![CDATA[
+                                var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+                                document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+                //]]></script>
+                            <script language="JavaScript" type="text/javascript">
+                                TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- </footer> -->
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src={%static "assets/vendor/purecounter/purecounter.js"%}></script>
+    <script src={%static "assets/vendor/aos/aos.js"%}></script>
+    <script src={%static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js"%}></script>
+    <script src={%static "assets/vendor/glightbox/js/glightbox.min.js"%}></script>
+    <script src={%static "assets/vendor/isotope-layout/isotope.pkgd.min.js"%}></script>
+    <script src={%static "assets/vendor/swiper/swiper-bundle.min.js"%}></script>
+    <script src={%static "assets/vendor/php-email-form/validate.js"%}></script>
+
+    <!-- Template Main JS File -->
+    <script src={%static "assets/js/main.js"%}></script>
+
+</body>
+
+</html>

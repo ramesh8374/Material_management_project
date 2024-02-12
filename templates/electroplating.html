@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Amik Metals | Amik Metals Pvt. Ltd.</title>
+    <meta name="description" content="We are A Ferrous Foundry located in Uluberia, 44 kms away from Kolkata. Having State-of-the-art equipment, specialised manpower and a dedicated team of professionals." >
+    <meta name="keywords" content="Amik Metals, Amik Metals Pvt. Ltd." >
+
+    <!-- Favicons -->
+    <link href={%static "assets/img/amik_Logo_PNG.png"%} rel="icon">
+    <link href={%static "assets/img/apple-touch-icon.png"%} rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={%static "assets/vendor/aos/aos.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/bootstrap/css/bootstrap.min.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/bootstrap-icons/bootstrap-icons.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/boxicons/css/boxicons.min.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/glightbox/css/glightbox.min.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/remixicon/remixicon.css"%} rel="stylesheet">
+    <link href={%static "assets/vendor/swiper/swiper-bundle.min.css"%} rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href={%static "assets/css/style.css"%} rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo logo_position_set">
+                <a href="{% url 'index' %}"><img class="logo_position_set2" src={%static "assets/img/amik_Logo_PNG.png"%} alt=""></a>
+                <h1 class="logo_text">Amik Metals</h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src={%static "assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'about' %}">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'product' %}">Products</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'electro' %}">ZINC ELECTROPLATING</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'infra' %}">Infrastructure</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'career' %}">Career</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'contact' %}">Contact Us</a></li>
+                    <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center about_section_rm_top">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 pt-0 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <img src={%static "assets/img/Zinc-ElectroPlating-v1.png"%} class="img-fluid animated" alt="">
+                    <div class="top-left">
+                        <h2 data-aos="fade-up" data-aos-delay="400" class="top_text_design">Zinc Electroplating
+                         <br>   Unit</h2>
+
+                    </div>
+                
+                </div>
+
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+    <main id="main">
+        <!-- new section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+      
+              <div class="section-title" data-aos="fade-up">
+                <h2 class="our_product_ds">About Zinc electroplating unit</h2>
+              </div>
+              <div class="text_" data-aos="fade-up" data-aos-delay="150">
+                <p class="lorem_ipsom_de_re">{{electro.content}}</p>
+
+            </div>
+            
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
+                {% for i in features%}  
+                <div class="col-lg-4 col-md-6 ">
+                    <div class="portfolio-infode">
+                        <h4 class="about_us_headings"><span><img src={%static "assets/img/Zinc-ElectroPlat.png"%} class="about_factory" alt=""></span>{{i}}</h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+           
+
+              
+            </div>
+          </section> 
+          <section>
+            <div class="container">
+                <img src={{electro.image.url}} class="about_factory_re" alt="">
+            </div>
+          </section>
+
+          <!-- <section id="portfolio" class="portfolio">
+            <div class="container">
+              <div class="section-title" data-aos="fade-up">
+                <h2 class="our_product_ds">Purpose of <br>
+                    Zinc electroplating unit</h2>
+              </div>
+              <div class="text_" data-aos="fade-up" data-aos-delay="150">
+                <p class="lorem_ipsom_de_re">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus facilisis mi ut pretium.. Lorem ipsum <br> dolor sit amet, consectetur adipiscing elit. Cras cursus facilisis mi ut pretium. Duis vitae ipsum<br>  non mauris lacinia suscipit bibendum at risus. Nam at vestibulum leo. Donec id iaculis eros. Fusce finibus<br> dolor dui. Donec imperdiet neque ac lobortis dignissim. Nunc tempor auctor nisi. </p>
+            </div>              
+            </div>
+          </section>  -->
+
+        <!-- ebd new section -->
+ 
+
+ 
+
+
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+   
+    <footer id="footer" class="footer-area py-5">
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="footer-logo mb-3">
+                            <img src={%static "assets/img/About-Us-logo.png"%} class="amik_Images" alt="">
+                            <h1 class="logo_text_footer">Amik Metals</h1>
+                        </div>
+                        <h6 class="text-light">
+
+                        </h6>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+                        <h5 class="footer-titel">Corporate Office</h5>
+                        <p>
+                            2 Hare Street
+                            Nicco House, 6th Floor
+                            Kolkata 700001, INDIA.
+                        </p>
+                        <h5 class="footer-titel">Factory Address</h5>
+                        <p>
+                            Kaijuri, P.O: Kaijuri, P.S: Uluberia, Uluberia - 1
+                            Howrah - 711316, West Bengal, INDIA
+                        </p>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
+                        <h5 class="footer-titel">Contact</h5>
+                        <p>
+                            (+91) 98 31955404 <br>
+                            (+91) 90077 74688<br>
+                            ankit@amikmetals.com<br>
+                            anish@amikmetals.com<br>
+                            we reply within 24 hours
+                        </p>
+                        <div>
+                            <script type="text/javascript"> //<![CDATA[
+                                var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+                                document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+                //]]></script>
+                            <script language="JavaScript" type="text/javascript">
+                                TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_sm_124x32.png", "POSDV", "none");
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- </footer> -->
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src={%static "assets/vendor/purecounter/purecounter.js"%}></script>
+    <script src={%static "assets/vendor/aos/aos.js"%}></script>
+    <script src={%static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js"%}></script>
+    <script src={%static "assets/vendor/glightbox/js/glightbox.min.js"%}></script>
+    <script src={%static "assets/vendor/isotope-layout/isotope.pkgd.min.js"%}></script>
+    <script src={%static "assets/vendor/swiper/swiper-bundle.min.js"%}></script>
+    <script src={%static "assets/vendor/php-email-form/validate.js"%}></script>
+
+    <!-- Template Main JS File -->
+    <script src={%static "assets/js/main.js"%}></script>
+
+</body>
+
+</html>
